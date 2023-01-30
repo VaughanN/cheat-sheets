@@ -1,0 +1,68 @@
+$title    = 'System setup utility'
+$question = 'Are you sure you want to proceed?'
+
+$choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+$choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Yes'))
+$choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&No'))
+
+$decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+if ($decision -eq 0) {
+    # ## Manufacturer specific
+    $systemManufacturer = (Get-CimInstance Win32_ComputerSystem).Manufacturer
+    $systemModel = (Get-CimInstance Win32_ComputerSystem).Model
+    
+    $title    = $systemManufacturer + ' ' + $systemModel + ' detected'
+    $question = 'Would you like to install the manufacturer driver utility?'
+
+    $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+    $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Yes'))
+    $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&No'))
+
+    $decisionDriver = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+    if ($decisionDriver -eq 0) {
+        if ($systemManufacturer -eq 'Dell Inc.'){
+            Write-Host "Dell Command Update installing..."
+            winget install -e --id Dell.CommandUpdate --no-upgrade
+        }
+    } else {
+        Write-Host "Skipping installation of system driver utility."
+    }
+    # ## Manufacturer specific
+
+    # ## App installation
+    Write-Host 'Proceeding with system setup...' 
+    winget install -e --id 7zip.7zip --no-upgrade
+    winget install -e --id Adobe.Acrobat.Reader.64-bit --no-upgrade
+    winget install -e --id Docker.DockerDesktop --no-upgrade
+    winget install -e --id File-New-Project.EarTrumpet --no-upgrade
+    winget install -e --id GitHub.GitHubDesktop --no-upgrade
+    winget install -e --id Google.Chrome --no-upgrade
+    winget install -e --id Microsoft.WindowsTerminal --no-upgrade
+    winget install -e --id Postman.Postman --no-upgrade
+    winget install -e --id Python.Python.3.10 --no-upgrade
+    winget install -e --id RARLab.WinRAR --no-upgrade
+    winget install -e --id VideoLAN.VLC --no-upgrade
+    winget install -e --id WiresharkFoundation.Wireshark --no-upgrade
+    winget install -e --id vim.vim --no-upgrade
+    winget install -e --id Microsoft.VisualStudioCode --no-upgrade
+    winget install -e --id Notepad++.Notepad++ --no-upgrade
+    winget install -e --id PDFsam.PDFsam --no-upgrade
+    winget install -e --id AdoptOpenJDK.OpenJDK.14 --no-upgrade
+    winget install -e --id JetBrains.Toolbox --no-upgrade
+    winget install -e --id Microsoft.PowerShell --no-upgrade
+    winget install -e --id JanDeDobbeleer.OhMyPosh --no-upgrade
+    winget install -e --id Git.Git --no-upgrade
+    winget install -e --id GitHub.cli --no-upgrade
+    # ## App installation
+
+    # ## WSL installation
+    $confirmation = Read-Host "Would you like to install WSL2 with Ubuntu? [Y] Yes or [N] No"
+    if ($confirmation -eq 'y') {
+        wsl.exe --install -d Ubuntu
+    }
+    # ## WSL installation
+    Write-Host 'System setup completed.'
+} else {
+    Write-Host 'System setup cancelled.'
+}
+

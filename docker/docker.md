@@ -79,6 +79,7 @@ COMMAND | DESCRIPTION
 `docker ps` | List running containers
 `docker ps -a` | List all containers, including stopped
 `docker logs CONTAINER` | Show a container output
+`docker logs CONTAINER 2>&1 `<code>&#124;</code>` grep SOME_STRING` | Search for SOME_STRING in the container logs
 `docker logs -f CONTAINER` | Follow a container output
 `docker top CONTAINER` | List the processes running in a container
 `docker diff` | Show the differences with the image (modified files)

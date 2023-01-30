@@ -27,3 +27,21 @@ To install k3s, you can follow different approaches.
 
 ### etcd snapshots
 Stored in `/var/lib/rancher/k3s/server/db/snapshots`.
+
+
+# Certificate Rotation
+## Automatic rotation
+By default, certificates in K3s expire in 12 months.
+
+If the certificates are expired or have fewer than 90 days remaining before they expire, the certificates are rotated when K3s is restarted.
+
+## Manual rotation
+To rotate the certificates manually, use the `k3s certificate rotate` subcommand:
+```bash 
+# Stop K3s  
+systemctl stop k3s  
+# Rotate certificates  
+k3s certificate rotate  
+# Start K3s  
+systemctl start k3s
+```

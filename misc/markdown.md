@@ -118,3 +118,4 @@ To check the task replace the space between the bracket with "x".
 ## Reference
 
 Link: [markdown guide](https://www.markdownguide.org/cheat-sheet)
+Link: [StackEdit guide](https://stackedit.io/app#)
