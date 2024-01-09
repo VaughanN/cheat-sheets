@@ -20,7 +20,7 @@ openssl genrsa -out ca.key 4096
 openssl req -new -x509 -sha256 -days 365 -key ca.key -out ca.crt
 ```
 
-2. Convert the files to a one line base64 decoded string (only works on Linux base64 tool)
+2. Convert the files to a one line base64 decoded string (only works on Linux base64 tool). NOTE use cat's -n switch to remove any newline characters.
 
 ```bash
 cat ca.key | base64 -w 0

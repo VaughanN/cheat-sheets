@@ -40,3 +40,25 @@ code $PROFILE
 ## (Optional) Set up starship Prompt
 You can customize the look and feel of PowerShell with the Starship Prompt ([[starship]]).
 
+
+#### Useful commands:
+Find string in files
+
+```powershell
+Get-ChildItem -Recurse | Select-String "search-string" -List | Select Path
+
+%% For example %%
+
+Get-ChildItem `
+        -Path "C:\data\path" -Filter "Example*.dat" -recurse | `
+    Select-String -pattern "dummy" | `
+    Select-Object -Property Path,LineNumber,Line | `
+    Export-CSV "C:\ResultFile.csv"
+
+
+Get-ChildItem -Recurse *.java | Select-String "dummy" -List | Select Path
+```
+
+```powershell
+ls -r | ?{ $_ | Select-String -Pattern "search-string" }
+```
