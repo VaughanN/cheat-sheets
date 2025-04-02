@@ -3,7 +3,8 @@ https://regex101.com/
 https://regexr.com/
 ## Notepad++ on Windows (using PCRE)
 
-Find timestamp at the end of a line `[0-9]{2}:[0-9]{2}:[0-9]{2}\r\n`
+**Find time at the end of a line
+ * Find What: `[0-9]{2}:[0-9]{2}:[0-9]{2}\r\n`
  E.g:
 
 12:01:00
@@ -12,14 +13,33 @@ Some text
 Some other text
 
 
-Strip the currency in a line Find What: `R(?:\h*)(\d{1})` Replace with `$1`
+**Strip the currency in a line
+* Find What: `R(?:\h*)(\d{1})`
+* Replace with `$1`
 E.g:
 R 10.00 or R10.00
 will match 'R 1' & 'R1' respectively create a capture group, ignoring any horizontal spaces, to find the leading digit of the amount.
 
 
-Replace holiday names in South African public holidays (https://www.gov.za/about-sa/public-holidays#2023)  with the year. Find What: `: [\s\D]*$\r` Replace with ` 2023`.
+**Replace holiday names in South African public holidays (https://www.gov.za/about-sa/public-holidays#2023)  with the year**. 
+ * Find What: `: [\s\D]*$\r` 
+ * Replace with ` 2023`.
 
+
+**Find timestamp at the beginning of a log file entry.
+* Find What:  `^[0-9]{1,4}-[0-9]{1,2}-[0-9]{1,2}T[0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2}.[0-9]{9}Z `
+E.g:
+2024-05-27T07:15:38.204466183Z {"@timestamp":"2024-05-27T09:15:38.204090617+02:00","@version":"1","message":"Fetching company with Party Directory UUID: a52942f2-922c-c025-c423-4f262602fe2a from Company Service.","logger_name":"za.co.ksdc.salesorderservice.client.company.CompanyServiceImpl","thread_name":"tomcat-handler-71198","level":"INFO","level_value":20000,"application_name":"sales-order"}
+
+
+**Find batches of five elements in a csv list 
+* Find What: `((?:[^,]*,){4}(?:[^,]*),)`
+* Replace with: `\1\n`
+E.g.: For the list: "uuid01","uuid02","uuid03","uuid04","uuid05","uuid06","uuid07","uuid08","uuid09","uuid10","uuid11",
+executing the Replace All command, results in the following:
+"uuid01","uuid02","uuid03","uuid04","uuid05",
+"uuid06","uuid07","uuid08","uuid09","uuid10",
+"uuid11",
 
 
 # RegEx notes and cheatsheet
