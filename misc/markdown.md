@@ -119,3 +119,98 @@ To check the task replace the space between the bracket with "x".
 
 Link: [markdown guide](https://www.markdownguide.org/cheat-sheet)
 Link: [StackEdit guide](https://stackedit.io/app#)
+
+---
+
+
+---
+
+
+[A quick reference to the Markdown syntax.](https://www.markdownguide.org/cheat-sheet/)
+
+
+
+# H1 (title)
+
+## H2 (subtitle)
+
+### H3 (heading)
+
+#### H4 (section)
+
+##### H5 (subsection)
+
+**Bold text**
+
+*Italic text*
+
+> blockquote
+
+* First bullet point item
+
+1. First item
+2. Second item
+3. Third item
+
+* First item
+* Second item
+* Third item
+
+`code`
+
+
+
+!\[ms-50-wallpaper] (https://cdn.mos.cms.futurecdn.net/Vt84y2Lg4Pgpkkqk7VMLLa.jpg)
+
+
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+
+
+```
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
+
+
+
+Here's a sentence with a footnote. \[^1]
+
+\[^1]: This is the footnote.
+
+### My Great Heading {#custom-id}
+
+
+
+term
+: definition
+
+
+
+~~The world is flat.~~
+
+
+
+* \[x] Write the press release
+* \[ ] Update the website
+* \[ ] Contact the media
+
+
+
+That is so funny! :joy:
+
+
+
+I need to highlight these ==very important words==.
+
+H~2~O
+
+X^2^
+

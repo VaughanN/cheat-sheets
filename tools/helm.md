@@ -1,5 +1,7 @@
 # Helm
 
+Provides a way to find, share, and use software built for Kubernetes [[kubernetes]].
+# Helm Cheat-Sheet
 ## Repository Management
 
 | Command | Description |
@@ -44,3 +46,26 @@
 | `helm lint <name>` | Lint the chart |
 | `helm package <name>` | Package the chart into foo.tgz |
 | `helm dependency update` | Install chart dependencies |
+
+COMMAND | DESCRIPTION
+---|---
+`helm create <NAME>` | Create a blank chart
+`helm lint <NAME>` | Lint the chart
+`helm package <NAME>` | Package the chart into foo.tgz
+`helm dependency update` | Install chart dependencies
+
+## Chart Folder Structure
+```
+wordpress/
+  Chart.yaml          # A YAML file containing information about the chart
+  LICENSE             # OPTIONAL: A plain text file containing the license for the chart
+  README.md           # OPTIONAL: A human-readable README file
+  requirements.yaml   # OPTIONAL: A YAML file listing dependencies for the chart
+  values.yaml         # The default configuration values for this chart
+  charts/             # A directory containing any charts upon which this chart depends.
+  templates/          # A directory of templates that, when combined with values,
+                      # will generate valid Kubernetes manifest files.
+  templates/NOTES.txt # OPTIONAL: A plain text file containing short usage notes
+```
+
+#kubernetes 

@@ -13,3 +13,5 @@ GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
 ```mysql
 FLUSH PRIVILEGES;
 ```
+
+

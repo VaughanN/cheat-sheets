@@ -64,3 +64,9 @@
 | --- | --- |
 | `terraform login` | Login to Terraform Cloud with an API token |
 | `terraform logout` | Logout from Terraform Cloud |
+
+COMMAND | DESCRIPTION
+---|---
+`terraform login` | Login to Terraform Cloud with an API token
+`terraform logou` | Logout from Terraform Cloud
+#devops

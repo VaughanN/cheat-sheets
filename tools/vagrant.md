@@ -1,3 +1,4 @@
+Vagrant is the command line utility for managing the lifecycle of virtual machines. Isolate dependencies and their configuration within a single disposable and consistent environment.
 # Vagrant Cheat-Sheet
 
 ## General Management
@@ -39,3 +40,16 @@
 | `vagrant box outdated` | Check for updates vagrant box update |
 | `vagrant box remove <box>` | Deletes a box from the machine |
 | `vagrant package` | Packages a running virtualbox env in a reusable box |
+
+COMMAND | DESCRIPTION
+---|---
+`vagrant box list` | See a list of all installed boxes on your computer
+`vagrant box add <BOXNAME> <BOXURL>` | Download a box image to your computer
+`vagrant box outdated` | Check for updates vagrant box update
+`vagrant box remove <BOXNAME>` | Deletes a box from the machine
+`vagrant package` | Packages a running virtualbox env in a reusable box
+
+## Vagrant with WSL2
+
+Vagrant is able to run inside your Windows Subsystem for Linux environment. A tutorial on how to install
+and use it with your Windows installed Virtualbox [[virtual-box]] can be found [here](https://thedatabaseme.de/2022/02/20/vagrant-up-running-vagrant-under-wsl2/).

@@ -1,3 +1,4 @@
+Provides the ability to manage multiple Kubernetes [[kubernetes]] clusters.
 # Install Rancher in single mode
 
 Execute the following script to backup the defined version and install the upgrade version.
