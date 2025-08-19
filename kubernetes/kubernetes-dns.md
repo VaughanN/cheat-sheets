@@ -1,4 +1,4 @@
-# Kubernetes DNS
+# Kubernetes [[kubernetes]] DNS
 
 ## Custom DNS Settings
 

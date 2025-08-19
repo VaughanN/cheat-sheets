@@ -1,3 +1,4 @@
+Ansible is an open source IT automation engine that automates provisioning, configuration management, application deployment, orchestration, and many other IT processes.
 # Ansible Cheat-Sheet
 ## Install Ansible on Ubuntu
 1. Install PIP
@@ -12,3 +13,5 @@ pip3 install ansible
 ```bash
 
 ```
+
+#devops 

@@ -4,6 +4,38 @@ Kubectl is a command line tool for communicating with a Kubernetes ([[kubernetes
 Documentation: [Kubectl Reference](https://kubernetes.io/docs/reference/kubectl/)
 
 ---
+
+## Log into the mysql cluster node
+
+```
+kubectl -n mysql exec -it mysqlcluster-0 -c mysql -- bash
+```
+
+
+```
+mysqldump --all-databases --add-drop-database --single-transaction --triggers --routines --port=3306 --user=root -p > /var/lib/mysql/db_backup/mysql-dump-250417.sql
+```
+
+
+```
+mysql -u root -p
+```
+
+
+```
+mysqlsh -u root -p
+```
+
+```
+$ var c=dba.getCluster()
+
+# View the cluster status.
+$ c.status()
+
+# Rescan the cluster for any issues. It will identify any nodes no longer part of the cluster and provide an option to remove it from the cluster metadata. And thereafter, potentially, to rejoin the cluster.
+c.rescan()
+```
+---
 ## Installation
 
 ### On Windows (PowerShell)

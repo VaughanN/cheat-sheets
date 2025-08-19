@@ -30,3 +30,5 @@ mount /dev/sr0 /media/iso
 cd /media/iso
 ./VBoxLinuxAdditions.run
 ```
+
+#local-dev #virtualisation

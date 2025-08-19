@@ -1,8 +1,9 @@
+Provides a mechanism to start multiple Docker [[docker]] containers along with storage and networking for the containers to make use of.
 # Docker-Compose
 ...
 
 ## Networking
-By default Docker-Compose will create a new network for the given compose file. You can change the behavior by defining custom networks in your compose file.
+By default Docker-Compose will create a new network for the given compose file. You can change the behaviour by defining custom networks in your compose file.
 ### Create and assign custom network
 ...
 *Example:*
@@ -37,3 +38,6 @@ services:
 ```
 
 These volumes are stored in `/var/lib/docker/volumes`.
+
+
+#docker 

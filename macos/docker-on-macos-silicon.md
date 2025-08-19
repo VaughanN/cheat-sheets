@@ -1,4 +1,4 @@
-# Docker on macOS Silicon
+# Docker [[docker]] on macOS Silicon
 ## Installation
 Docker Desktop
 
@@ -12,3 +12,4 @@ docker run --platform linux/amd64
 ## Shared volumes
 Shared volumes can be configured in the Docker Desktop Settings `Docker -> Preferences... -> Resources -> File Sharing`
 
+#docker 

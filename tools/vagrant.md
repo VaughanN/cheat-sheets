@@ -1,3 +1,4 @@
+Vagrant is the command line utility for managing the lifecycle of virtual machines. Isolate dependencies and their configuration within a single disposable and consistent environment.
 # Vagrant Cheat-Sheet
 ## General Management
 COMMAND | DESCRIPTION
@@ -38,4 +39,4 @@ COMMAND | DESCRIPTION
 ## Vagrant with WSL2
 
 Vagrant is able to run inside your Windows Subsystem for Linux environment. A tutorial on how to install
-and use it with your Windows installed Virtualbox can be found [here](https://thedatabaseme.de/2022/02/20/vagrant-up-running-vagrant-under-wsl2/).
+and use it with your Windows installed Virtualbox [[virtual-box]] can be found [here](https://thedatabaseme.de/2022/02/20/vagrant-up-running-vagrant-under-wsl2/).
