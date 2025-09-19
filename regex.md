@@ -3,6 +3,30 @@ https://regex101.com/
 https://regexr.com/
 ## Notepad++ on Windows (using PCRE)
 
+**Find and replace all escaped characters , e.g. \\\\", \\\\n & \\\\t, in log files with quotes, newlines and tabs
+- Find What: `(\\t)|(\\n)|(\\")`
+- Replace With: `(?1\t)(?2\n)(?3\")`
+
+E.g.:
+
+The log file:
+```
+(ConstructorResolver.java:791)\n\t... 48 common frames omitted\nCaused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'app.party-service.appian-api-key' in value \"${app.party-service.appian-api-key}\"\n\tat org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81)\n\tat org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423)\n\tat org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128)\n\t
+```
+
+Becomes:
+
+```text
+(ConstructorResolver.java:791)
+	... 48 common frames omitted
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'app.party-service.appian-api-key' in value "${app.party-service.appian-api-key}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81)
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423)
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128)
+
+```
+
+
 **Find time at the end of a line
  * Find What: `[0-9]{2}:[0-9]{2}:[0-9]{2}\r\n`
  E.g:
